@@ -63,7 +63,7 @@ void setup() {
   
   // Inisialisasi LED built-in
   pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, LOW);  // LED mati di awal
+  digitalWrite(LED_BUILTIN, HIGH);  // LED mati di awal
   
   Serial.println("🎭 DETEKSI MASKER - ESP32S3 + Edge Impulse");
   Serial.println("💡 LED Control: PakaiMasker=ON, TidakPakai=BLINK, TidakAda=OFF");
@@ -125,11 +125,11 @@ void loop() {
 void handle_led_control() {
   switch (current_led_status) {
     case LED_OFF:
-      digitalWrite(LED_BUILTIN, LOW);
+      digitalWrite(LED_BUILTIN, HIGH);
       break;
       
     case LED_ON:
-      digitalWrite(LED_BUILTIN, HIGH);
+      digitalWrite(LED_BUILTIN, LOW);
       break;
       
     case LED_BLINK:
